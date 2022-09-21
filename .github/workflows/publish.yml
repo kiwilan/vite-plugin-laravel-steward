@@ -26,25 +26,18 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: pnpm build
-      - name: Create Tag
-        id: create_tag
-        uses: jaywcjlove/create-tag-action@main
-        with:
-          package-path: ./package.json
       - name: Create Release
-        uses: ncipollo/release-action@v1
-        if: steps.create_tag.outputs.successful
+        id: release
+        uses: halvardssm/github-action-tag-release@v1
         with:
-          name: ${{ steps.create_tag.outputs.version }}
-          tag: ${{ steps.create_tag.outputs.version }}
-          body: |
-            ```bash
-            npm i @kiwilan/vite-plugin-laravel-steward@${{steps.create_tag.outputs.versionNumber}}
-            ```
-
-            ${{ steps.changelog.outputs.compareurl }}
-            ${{ steps.changelog.outputs.changelog }}
-      - name: Publish package on NPM 📦
-        run: npm publish --scope=kiwilan ./lib --access public
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: "./package.json" # optional, will use ./package.json by default
+      - run: |
+          echo 'Release created: ${{steps.version.outputs.release_created}}' # 'true' or 'false'
+          echo 'Release exists: ${{steps.version.outputs.release_exists}}' # 'true' or 'false'
+          echo 'Release tag: ${{steps.version.outputs.release_tag}}' # The tag from package.json
+      - if: ${{steps.release.outputs.release_exists == 'true'}}
+        run: |
+          npm publish --scope=kiwilan ./lib --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
