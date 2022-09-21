@@ -1,0 +1,50 @@
+name: '🚀 publish'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: 🚀 publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📚 checkout
+        uses: actions/checkout@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.8.0
+          run_install: |
+            - recursive: true
+      - name: 🟢 node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.19
+          registry-url: https://registry.npmjs.org/
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm build
+      - name: Create Tag
+        id: create_tag
+        uses: jaywcjlove/create-tag-action@main
+        with:
+          package-path: ./libs/docs-ui-vue/package.json
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        if: steps.create_tag.outputs.successful
+        with:
+          name: ${{ steps.create_tag.outputs.version }}
+          tag: ${{ steps.create_tag.outputs.version }}
+          body: |
+            ```bash
+            npm i @ewilan-riviere/docs-ui-vue@${{steps.create_tag.outputs.versionNumber}}
+            ```
+
+            ${{ steps.changelog.outputs.compareurl }}
+            ${{ steps.changelog.outputs.changelog }}
+      - name: Publish package on NPM 📦
+        run: npm publish ./libs/docs-ui-vue/dist --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

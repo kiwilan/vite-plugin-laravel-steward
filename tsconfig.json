@@ -14,9 +14,7 @@
     "skipLibCheck": true
   },
   "include": [
-    "src",
-    "test",
-    "vite.config.ts"
+    "src"
   ],
   "exclude": [
     "**/dist",
