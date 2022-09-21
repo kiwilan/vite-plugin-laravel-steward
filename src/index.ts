@@ -37,14 +37,14 @@ function plugin(userOptions: Options = {}): Plugin {
       }[] = [
         {
           name: 'color-mode.js',
-          path: 'resources/js/color-mode.js',
+          path: 'lib/js/color-mode.js',
           library: false,
         },
-        {
-          name: 'tiptap.js',
-          path: 'dist/tiptap.cjs',
-          library: true,
-        },
+        // {
+        //   name: 'tiptap.js',
+        //   path: 'dist/tiptap.cjs',
+        //   library: true,
+        // },
       ]
 
       const path = `${process.cwd()}/vendor/kiwilan/laravel-steward`

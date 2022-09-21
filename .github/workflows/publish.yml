@@ -30,7 +30,7 @@ jobs:
         id: create_tag
         uses: jaywcjlove/create-tag-action@main
         with:
-          package-path: ./libs/docs-ui-vue/package.json
+          package-path: ./package.json
       - name: Create Release
         uses: ncipollo/release-action@v1
         if: steps.create_tag.outputs.successful
@@ -39,12 +39,12 @@ jobs:
           tag: ${{ steps.create_tag.outputs.version }}
           body: |
             ```bash
-            npm i @ewilan-riviere/docs-ui-vue@${{steps.create_tag.outputs.versionNumber}}
+            npm i @kiwilan/vite-plugin-laravel-steward@${{steps.create_tag.outputs.versionNumber}}
             ```
 
             ${{ steps.changelog.outputs.compareurl }}
             ${{ steps.changelog.outputs.changelog }}
       - name: Publish package on NPM 📦
-        run: npm publish ./libs/docs-ui-vue/dist --access public
+        run: npm publish --scope=kiwilan ./lib --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
