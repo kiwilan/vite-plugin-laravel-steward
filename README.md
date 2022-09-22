@@ -1,6 +1,8 @@
 # vite-plugin-laravel-steward
 
-A Vite plugin for Laravel Steward.
+[![vite-plugin-laravel-steward](https://img.shields.io/npm/v/@kiwilan/vite-plugin-laravel-steward.svg?style=flat-square&color=CB3837&logo=npm&logoColor=ffffff&label=vite-plugin-laravel-steward)](https://www.npmjs.com/package/@kiwilan/vite-plugin-laravel-steward)
+
+A Vite plugin for [Laravel Steward](https://github.com/kiwilan/laravel-steward).
 
 ## Installation
 
