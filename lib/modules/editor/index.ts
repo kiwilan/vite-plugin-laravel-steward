@@ -2,8 +2,8 @@ import type { ChainedCommands, EditorT } from '../../dist'
 import { tiptap } from '../../dist'
 // import { CharacterCount, Editor, Link, StarterKit, Typography } from '../../dist'
 // import type { ChainedCommands } from '../../dist'
-import type { ActionButton } from './tiptap-actions'
-import { ExecuteCommand, Extras, Marks, Nodes } from './tiptap-actions'
+import type { ActionButton } from './actions'
+import { ExecuteCommand, Extras, Marks, Nodes } from './actions'
 
 let refs: {
   editorReference: HTMLElement
