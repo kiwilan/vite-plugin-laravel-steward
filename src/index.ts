@@ -47,7 +47,7 @@ function plugin(userOptions: Options = {}): Plugin {
         // },
       ]
 
-      const path = `${process.cwd()}/vendor/kiwilan/laravel-steward`
+      const path = `${process.cwd()}/node_modules/@kiwilan/vite-plugin-laravel-steward`
 
       await fs.promises.mkdir(outputDirScripts, { recursive: true }).catch(console.error)
       await fs.promises.mkdir(outputDirLibraries, { recursive: true }).catch(console.error)
