@@ -8,16 +8,16 @@ A Vite plugin for [Laravel Steward](https://github.com/kiwilan/laravel-steward).
 ## Installation
 
 ```bash
-npm install --save-dev vite-plugin-laravel-steward
+npm install --save-dev @kiwilan/vite-plugin-laravel-steward
 # OR
-pnpm add vite-plugin-laravel-steward -D
+pnpm add @kiwilan/vite-plugin-laravel-steward -D
 ```
 
 ## Usage
 
 ```js
 import { defineConfig } from 'vite'
-import steward from 'vite-plugin-laravel-steward'
+import { steward } from '@kiwilan/vite-plugin-laravel-steward'
 
 export default defineConfig({
   plugins: [

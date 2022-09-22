@@ -4,7 +4,7 @@ export default defineConfig({
   name: 'vite-plugin-laravel-steward',
   entryPoints: {
     index: 'src/index.ts',
-    tiptap: 'src/modules/tiptap/index.ts',
+    // tiptap: 'src/modules/tiptap/index.ts',
     // editor: 'lib/editor.ts',
   },
   format: ['cjs'],

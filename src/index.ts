@@ -1,67 +1,11 @@
-import fs from 'fs'
-import type { Plugin } from 'vite'
+import steward from './modules/vite-plugin'
+import * as tiptap from './modules/tiptap'
 
-interface Options {
-  /**
-   * Where JS scripts will be copied
-   * @default './public/vendor/js'
-   */
-  outputDirScripts?: string
-  /**
-   * Where JS libraries will be copied
-   * @default './resources/js'
-   */
-  outputDirLibraries?: string
+interface EditorT extends tiptap.EditorT {}
+interface ChainedCommands extends tiptap.ChainedCommands {}
+
+export type { ChainedCommands, EditorT }
+export {
+  steward,
+  tiptap,
 }
-
-const outputDirScriptsDefault = './public/vendor/js'
-const outputDirLibrariesDefault = './resources/libs'
-
-const DEFAULT_OPTIONS: Options = {
-  outputDirScripts: outputDirScriptsDefault,
-  outputDirLibraries: outputDirLibrariesDefault,
-}
-
-function plugin(userOptions: Options = {}): Plugin {
-  return {
-    name: 'vite-plugin-markdoc-content',
-    async buildStart() {
-      const opts: Options = Object.assign({}, DEFAULT_OPTIONS, userOptions)
-      const outputDirScripts = opts.outputDirScripts as string
-      const outputDirLibraries = opts.outputDirLibraries as string
-
-      const filesToCopy: {
-        name: string
-        path: string
-        library: boolean
-      }[] = [
-        {
-          name: 'color-mode.js',
-          path: 'lib/js/color-mode.js',
-          library: false,
-        },
-        // {
-        //   name: 'tiptap.js',
-        //   path: 'dist/tiptap.cjs',
-        //   library: true,
-        // },
-      ]
-
-      const path = `${process.cwd()}/node_modules/@kiwilan/vite-plugin-laravel-steward`
-
-      await fs.promises.mkdir(outputDirScripts, { recursive: true }).catch(console.error)
-      await fs.promises.mkdir(outputDirLibraries, { recursive: true }).catch(console.error)
-
-      for (const file of filesToCopy) {
-        const outputDir = file.library ? outputDirLibraries : outputDirScripts
-        fs.copyFile(`${path}/${file.path}`, `${outputDir}/${file.name}`, (err) => {
-          if (err)
-            throw err
-        })
-      }
-    },
-  }
-}
-
-export type { Options }
-export default plugin
