@@ -9,5 +9,5 @@ export default defineConfig({
   format: ['cjs'],
   outDir: 'lib/dist',
   dts: true,
-  minify: true,
+  minify: false,
 })

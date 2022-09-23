@@ -1,6 +1,8 @@
 import type { Alpine } from 'alpinejs'
-import editor from './data'
+import EditorAlpinePlugin from './plugin'
 
-export default function (Alpine: Alpine) {
-  Alpine.data('editor', editor)
+export default (Alpine: Alpine) => {
+  Alpine.plugin(EditorAlpinePlugin)
 }
+
+export { EditorAlpinePlugin }
