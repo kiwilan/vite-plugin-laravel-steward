@@ -1,7 +1,15 @@
-import type { ChainedCommands } from '../../dist/tiptap'
-import { CharacterCount, Editor, Link, StarterKit, Typography } from '../tiptap'
-import type { ActionButton } from './tiptap-actions'
-import { ExecuteCommand, Extras, Marks, Nodes } from './tiptap-actions'
+// import type { ChainedCommands, EditorT } from '../../../lib/dist'
+// import { tiptap } from '../../../lib/dist'
+// import { CharacterCount, Editor, Link, StarterKit, Typography } from '@/lib/dist'
+// import type { ChainedCommands } from '@/lib/dist'
+import type { ChainedCommands } from '@tiptap/core'
+import { Editor } from '@tiptap/core'
+import StarterKit from '@tiptap/starter-kit'
+import Typography from '@tiptap/extension-typography'
+import CharacterCount from '@tiptap/extension-character-count'
+import Link from '@tiptap/extension-link'
+import type { ActionButton } from './actions'
+import { ExecuteCommand, Extras, Marks, Nodes } from './actions'
 
 let refs: {
   editorReference: HTMLElement
@@ -11,11 +19,10 @@ let editor: Editor
 
 /**
  * Tiptap editor
- * @param {HTMLElement} editorReference
  *
  * Helped with: https://github.com/ueberdosis/tiptap/issues/1515#issuecomment-903095273
  */
-const EditorTiptap = () => ({
+const Tiptap = () => ({
   content: '<p>This is where the content goes</p>',
   actions: [] as ActionButton[],
   updatedAt: Date.now(),
@@ -93,4 +100,4 @@ const EditorTiptap = () => ({
   },
 })
 
-export default EditorTiptap
+export default Tiptap

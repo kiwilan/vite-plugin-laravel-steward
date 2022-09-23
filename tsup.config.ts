@@ -5,7 +5,6 @@ export default defineConfig({
   entryPoints: {
     index: 'src/index.ts',
     // tiptap: 'src/modules/tiptap/index.ts',
-    // editor: 'lib/editor.ts',
   },
   format: ['cjs'],
   outDir: 'lib/dist',
