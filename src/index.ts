@@ -1,13 +1,13 @@
-import steward from './modules/vite-plugin'
-import * as tiptap from './modules/tiptap'
-import editor from './modules/editor'
+import Steward from './modules/vite-plugin'
+import * as Tiptap from './modules/tiptap'
+import EditorAlpinePlugin from './modules/editor'
 
-interface EditorT extends tiptap.EditorT {}
-interface ChainedCommands extends tiptap.ChainedCommands {}
+// interface EditorT extends tiptap.EditorT {}
+// interface ChainedCommands extends tiptap.ChainedCommands {}
 
-export type { ChainedCommands, EditorT }
+// export type { ChainedCommands, EditorT }
 export {
-  steward,
-  tiptap,
-  editor,
+  Steward,
+  Tiptap,
+  EditorAlpinePlugin,
 }
