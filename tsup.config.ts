@@ -4,7 +4,7 @@ export default defineConfig({
   name: 'vite-plugin-laravel-steward',
   entry: {
     'index': 'src/index.ts',
-    'style': 'src/style.ts',
+    'style/index': 'src/style.ts',
     'tiptap/index': 'src/tiptap.ts',
   },
   format: ['cjs', 'iife'],
