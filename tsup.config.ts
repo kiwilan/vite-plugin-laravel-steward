@@ -2,12 +2,14 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig({
   name: 'vite-plugin-laravel-steward',
-  entryPoints: {
-    index: 'src/index.ts',
-    // tiptap: 'src/modules/tiptap/index.ts',
+  entry: {
+    'index': 'src/index.ts',
+    'tiptap/index': 'src/tiptap.ts',
   },
-  format: ['cjs'],
+  format: ['cjs', 'iife'],
   outDir: 'lib/dist',
   dts: true,
   minify: false,
+  treeshake: true,
+  splitting: true,
 })

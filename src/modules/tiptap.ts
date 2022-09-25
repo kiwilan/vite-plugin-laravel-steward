@@ -8,7 +8,7 @@ import Link from '@tiptap/extension-link'
 interface EditorT extends Editor {}
 
 export type { ChainedCommands, EditorT }
-export {
+export default {
   Editor,
   StarterKit,
   Typography,

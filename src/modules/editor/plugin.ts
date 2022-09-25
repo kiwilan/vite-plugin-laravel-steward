@@ -1,22 +1,14 @@
 import type { Alpine } from 'alpinejs'
-import type { ChainedCommands } from '@tiptap/core'
-import { Editor } from '@tiptap/core'
-import StarterKit from '@tiptap/starter-kit'
-import Typography from '@tiptap/extension-typography'
-import CharacterCount from '@tiptap/extension-character-count'
-import Link from '@tiptap/extension-link'
+import type { ChainedCommands, EditorT } from '../tiptap'
+import Tiptap from '../tiptap'
 import type { ActionButton } from './actions'
 import { ExecuteCommand, Extras, Marks, Nodes } from './actions'
-// import type { ChainedCommands, EditorT } from '../../../lib/dist'
-// import { tiptap } from '../../../lib/dist'
-// import { CharacterCount, Editor, Link, StarterKit, Typography } from '@/lib/dist'
-// import type { ChainedCommands } from '@/lib/dist'
 
 let refs: {
   editorReference: HTMLElement
 }
 
-let editor: Editor
+let editor: EditorT
 
 /**
  * Tiptap editor
@@ -36,16 +28,16 @@ export default (Alpine: Alpine) => {
       // @ts-ignore - this is a reference to the Alpine data object
       refs = this.$refs
 
-      editor = new Editor({
+      editor = new Tiptap.Editor({
         element: refs.editorReference,
         extensions: [
-          StarterKit,
-          Typography,
+          Tiptap.StarterKit,
+          Tiptap.Typography,
           // CharacterCount.configure({
           //   limit: this.limit,
           // }),
-          CharacterCount,
-          Link,
+          Tiptap.CharacterCount,
+          Tiptap.Link,
         ],
         content: this.content,
         onCreate: () => {

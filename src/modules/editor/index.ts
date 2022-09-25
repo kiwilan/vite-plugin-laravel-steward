@@ -4,5 +4,3 @@ import EditorAlpinePlugin from './plugin'
 export default (Alpine: Alpine) => {
   Alpine.plugin(EditorAlpinePlugin)
 }
-
-export { EditorAlpinePlugin }
