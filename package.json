@@ -1,6 +1,6 @@
 {
   "name": "@kiwilan/vite-plugin-laravel-steward",
-  "version": "0.0.131",
+  "version": "0.0.132",
   "description": "Vite plugin for laravel-steward.",
   "author": "Ewilan Rivière <ewilan.riviere@gmail.com>",
   "license": "MIT",
@@ -26,7 +26,8 @@
   "module": "./lib/dist/index.js",
   "types": "./lib/dist/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "dist/*.css"
   ],
   "scripts": {
     "build": "tsup --clean",

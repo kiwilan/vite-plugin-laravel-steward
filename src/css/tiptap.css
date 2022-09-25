@@ -9,13 +9,13 @@
 }
 .tiptap .tiptap-wrapper .tiptap-action {
   @apply py-1 px-1 rounded-md transition-colors duration-100 text-white;
-  @apply bg-opacity-60 hover:bg-primary-500 hover:bg-opacity-60 relative border border-transparent;
+  @apply bg-opacity-60 hover:bg-purple-500 hover:bg-opacity-60 relative border border-transparent;
 }
 .tiptap .tiptap-wrapper .tiptap-action span {
   @apply block h-4 w-4 text-black dark:text-white;
 }
 .tiptap .tiptap-wrapper .tiptap-action_active {
-  @apply bg-primary-500;
+  @apply bg-purple-500;
 }
 .tiptap .tiptap-wrapper .tiptap-editor {
   @apply h-[70vh];
@@ -33,7 +33,7 @@
 }
 
 .tiptap .tiptap-border {
-  @apply border-gray-400 dark:border-gray-700 focus:!ring-primary-500 focus:!border-primary-500 transition-colors duration-100;
+  @apply border-gray-400 dark:border-gray-700 focus:!ring-purple-500 focus:!border-purple-500 transition-colors duration-100;
 }
 .tiptap .tiptap-bg {
   @apply bg-gray-50 dark:bg-gray-800;
