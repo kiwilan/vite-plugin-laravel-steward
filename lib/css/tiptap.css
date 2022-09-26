@@ -1,5 +1,5 @@
 .tiptap {
-  @apply m-5;
+  /* @apply m-5; */
 }
 .tiptap .tiptap-wrapper {
   @apply border rounded-md;
@@ -18,7 +18,7 @@
   @apply bg-primary-500;
 }
 .tiptap .tiptap-wrapper .tiptap-editor {
-  @apply h-[50vh];
+  @apply h-[30vh];
   @apply shadow-sm mt-1 block w-full sm:text-base px-3 py-1 overflow-auto;
 }
 
