@@ -1,6 +1,6 @@
 {
   "name": "@kiwilan/vite-plugin-laravel-steward",
-  "version": "0.0.134",
+  "version": "0.0.135",
   "description": "Vite plugin for laravel-steward.",
   "author": "Ewilan Rivière <ewilan.riviere@gmail.com>",
   "license": "MIT",
@@ -18,17 +18,25 @@
   ],
   "exports": {
     ".": {
-      "require": "./lib/dist/index.js",
-      "import": "./lib/dist/index.js"
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./css/tiptap.css": {
+      "import": "./lib/css/tiptap.css",
+      "require": "./lib/css/tiptap.css"
     }
   },
-  "main": "./lib/dist/index.js",
-  "module": "./lib/dist/index.js",
-  "types": "./lib/dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "lib",
-    "dist/*.css"
+    "dist"
   ],
+  "directories": {
+    "dist": "dist",
+    "lib": "lib"
+  },
   "scripts": {
     "build": "tsup --clean",
     "watch": "tsup --watch",
@@ -59,8 +67,5 @@
     "tsup": "^6.2.3",
     "typescript": "^4.8.3",
     "vite": "^3.1.3"
-  },
-  "directories": {
-    "lib": "lib"
   }
 }
