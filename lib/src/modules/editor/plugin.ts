@@ -4,6 +4,26 @@ import Tiptap from '../tiptap'
 import type { ActionButton } from './actions'
 import { ExecuteCommand, Extras, Marks, Nodes } from './actions'
 
+interface EditorActions {
+  bold: boolean
+  italic: boolean
+  strike: boolean
+  code: boolean
+  link: boolean
+  h1: boolean
+  h2: boolean
+  h3: boolean
+  seperator: boolean
+  codeBlock: boolean
+  blockquote: boolean
+  bulletList: boolean
+  orderedList: boolean
+  horizontalRule: boolean
+  clear: boolean
+  undo: boolean
+  redo: boolean
+}
+
 let refs: {
   editorReference: HTMLElement
 }
@@ -23,7 +43,25 @@ export default (Alpine: Alpine) => {
     $wire: {
       content: '',
     },
-    init() {
+    init(actions: EditorActions = {
+      bold: true,
+      italic: true,
+      strike: true,
+      code: false,
+      link: true,
+      h1: false,
+      h2: true,
+      h3: true,
+      seperator: true,
+      codeBlock: false,
+      blockquote: true,
+      bulletList: true,
+      orderedList: false,
+      horizontalRule: false,
+      clear: true,
+      undo: true,
+      redo: true,
+    }) {
       // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
       // @ts-ignore - this is a reference to the Alpine data object
       refs = this.$refs
@@ -55,6 +93,26 @@ export default (Alpine: Alpine) => {
         },
       })
 
+      const actionsAvailable = {
+        bold: Marks.bold,
+        italic: Marks.italic,
+        strike: Marks.strike,
+        code: Marks.code,
+        link: Marks.link,
+        h1: Nodes.h1,
+        h2: Nodes.h2,
+        h3: Nodes.h3,
+        seperator: Extras.separator,
+        codeBlock: Nodes.codeBlock,
+        blockquote: Nodes.blockquote,
+        bulletList: Nodes.bulletList,
+        orderedList: Nodes.orderedList,
+        horizontalRule: Nodes.horizontalRule,
+        clear: Extras.clearNodes,
+        undo: Extras.undo,
+        redo: Extras.redo,
+        default: 'None',
+      }
       this.actions = [
         Marks.bold,
         Marks.italic,
@@ -76,6 +134,7 @@ export default (Alpine: Alpine) => {
         Extras.redo,
         Extras.undo,
       ]
+      console.log(actions)
     },
     isActive(action: ActionButton) {
       return editor.isActive(action.command, action.params)

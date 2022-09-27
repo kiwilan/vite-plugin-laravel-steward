@@ -1,71 +1,18 @@
 {
-  "name": "@kiwilan/vite-plugin-laravel-steward",
-  "version": "0.0.136",
-  "description": "Vite plugin for laravel-steward.",
-  "author": "Ewilan Rivière <ewilan.riviere@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/kiwilan/vite-plugin-laravel-steward",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kiwilan/vite-plugin-laravel-steward.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kiwilan/vite-plugin-laravel-steward/issues"
-  },
-  "keywords": [
-    "steward",
-    "vite"
-  ],
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.js"
-    },
-    "./css/tiptap.css": {
-      "import": "./lib/css/tiptap.css",
-      "require": "./lib/css/tiptap.css"
-    }
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "lib",
-    "dist"
-  ],
-  "directories": {
-    "dist": "dist",
-    "lib": "lib"
-  },
+  "name": "markdoc-content",
   "scripts": {
-    "build": "tsup --clean",
-    "watch": "tsup --watch",
-    "lint": "eslint . --ignore-path .gitignore",
-    "lint:fix": "eslint . --fix --ignore-path .gitignore",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "dev": "cd test && pnpm run dev",
+    "build": "cd lib && pnpm run build",
+    "package-locally": "cd lib && pnpm pack",
+    "package": "./bin/package.sh",
+    "prepare": "husky install",
+    "lint": "pnpm recursive run lint",
+    "lint:fix": "pnpm recursive run lint:fix",
+    "test": "pnpm recursive run test",
+    "coverage": "pnpm recursive run coverage"
   },
+  "license": "MIT",
   "devDependencies": {
-    "@antfu/eslint-config": "^0.27.0",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/line-clamp": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.7",
-    "@tiptap/core": "2.0.0-beta.196",
-    "@tiptap/extension-character-count": "2.0.0-beta.196",
-    "@tiptap/extension-link": "2.0.0-beta.196",
-    "@tiptap/extension-typography": "2.0.0-beta.196",
-    "@tiptap/starter-kit": "2.0.0-beta.196",
-    "@types/alpinejs": "^3.7.0",
-    "@types/node": "^18.7.20",
-    "alpinejs": "^3.10.3",
-    "autoprefixer": "^10.4.12",
-    "eslint": "^8.24.0",
-    "husky": "^8.0.1",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8",
-    "tsup": "^6.2.3",
-    "typescript": "^4.8.3",
-    "vite": "^3.1.3"
+    "husky": "^8.0.0"
   }
 }
