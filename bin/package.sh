@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm ~/kiwilan-vite-plugin-laravel-steward-0.0.*.tgz
+rm -f ~/kiwilan-vite-plugin-laravel-steward-*.tgz
 cd lib
 pnpm build
 npm pack --pack-destination ~

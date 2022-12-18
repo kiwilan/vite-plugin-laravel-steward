@@ -13,6 +13,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "husky": "^8.0.0"
+    "husky": "^8.0.2"
   }
 }

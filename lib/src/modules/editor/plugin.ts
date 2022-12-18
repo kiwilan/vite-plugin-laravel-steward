@@ -134,7 +134,6 @@ export default (Alpine: Alpine) => {
         Extras.redo,
         Extras.undo,
       ]
-      console.log(actions)
     },
     isActive(action: ActionButton) {
       return editor.isActive(action.command, action.params)
