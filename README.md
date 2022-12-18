@@ -1,9 +1,7 @@
 # vite-plugin-laravel-steward
 
 [![npm](https://img.shields.io/npm/v/@kiwilan/vite-plugin-laravel-steward.svg?style=flat-square&color=CB3837&logo=npm&logoColor=ffffff&label=npm)](https://www.npmjs.com/package/@kiwilan/vite-plugin-laravel-steward)
-[![publish](https://img.shields.io/github/workflow/status/kiwilan/vite-plugin-laravel-steward/publish?style=flat-square&logo=github&logoColor=ffffff&label=publish)](https://github.com/kiwilan/vite-plugin-laravel-steward/actions)
-
-![Fix PHP code style issues](https://github.com/kiwilan/laravel-steward/actions/workflows/publish.yml/badge.svg)
+![publish](https://github.com/kiwilan/laravel-steward/actions/workflows/publish.yml/badge.svg)
 
 A Vite plugin for [Laravel Steward](https://github.com/kiwilan/laravel-steward).
 
