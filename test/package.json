@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@kiwilan/vite-plugin-laravel-steward": "file:~/kiwilan-vite-plugin-laravel-steward-0.0.136.tgz",
+    "@kiwilan/vite-plugin-laravel-steward": "^0.0.136",
     "@types/alpinejs": "^3.7.1",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",

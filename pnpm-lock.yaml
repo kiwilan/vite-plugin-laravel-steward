@@ -76,7 +76,7 @@ importers:
 
   test:
     specifiers:
-      '@kiwilan/vite-plugin-laravel-steward': file:~/kiwilan-vite-plugin-laravel-steward-0.0.136.tgz
+      '@kiwilan/vite-plugin-laravel-steward': ^0.0.136
       '@tailwindcss/forms': ^0.5.3
       '@tailwindcss/typography': ^0.5.8
       '@types/alpinejs': ^3.7.1
@@ -91,7 +91,7 @@ importers:
       '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
       alpinejs: 3.10.5
     devDependencies:
-      '@kiwilan/vite-plugin-laravel-steward': file:../../kiwilan-vite-plugin-laravel-steward-0.0.136.tgz
+      '@kiwilan/vite-plugin-laravel-steward': 0.0.136
       '@types/alpinejs': 3.7.1
       autoprefixer: 10.4.13_postcss@8.4.20
       postcss: 8.4.20
@@ -472,6 +472,10 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@kiwilan/vite-plugin-laravel-steward/0.0.136:
+    resolution: {integrity: sha512-xkBoduAGrXencI43HaV3T3y+ExK2RPhURFFsRm7c4LlA7W8YfqE1TWWWcH/rkzL4h+/qp/NJffSLRyCdM5/T2w==}
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
@@ -3705,10 +3709,4 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-    dev: true
-
-  file:../../kiwilan-vite-plugin-laravel-steward-0.0.136.tgz:
-    resolution: {integrity: sha512-CaQRl8Z8z+1tUIpBsrH9LpK9CG3Wjt0yiUvoWfkOiaeqRPlc0v/vkkj6mtyeeP57RNg/9MLomAEqjXqQOey1uw==, tarball: file:../../kiwilan-vite-plugin-laravel-steward-0.0.136.tgz}
-    name: '@kiwilan/vite-plugin-laravel-steward'
-    version: 0.0.136
     dev: true
